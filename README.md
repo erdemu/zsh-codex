@@ -11,6 +11,9 @@ Simple usage
 - set root folder of where you put these files to ZSH_CODEX_HOME
 - source zsh_codex.zsh
 
+
+This is what I came up with in 2 hours after being inspired of excellent warp [terminal](warp.dev)
+
 ### LICENSE
 
 MIT
