@@ -1,0 +1,7 @@
+# ZSH OPENAI CODEX
+
+TODO: write docs
+
+### LICENSE
+
+MIT
