@@ -12,7 +12,7 @@ Simple usage
 - source zsh_codex.zsh
 
 
-This is what I came up with in 2 hours after being inspired of excellent warp [terminal](warp.dev)
+This is what I came up with in 2 hours after being inspired of excellent warp [terminal](https://www.warp.dev)
 
 ### LICENSE
 
