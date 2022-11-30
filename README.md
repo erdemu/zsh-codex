@@ -15,7 +15,7 @@ Your prompt will look and behave the same, until you press enter. Each new line 
 
 Feel free to improve (such as adding copy to clip board key combo, color hacks)
 
-This is what I came up within 2 hours after being inspired of excellent warp [terminal](https://www.warp.dev)
+This is what I came up within 2 hours after being inspired by excellent [warp terminal](https://www.warp.dev) and disagreeing with their closed-source policy. I think a terminal client from a 3rd party should always be open source for privacy reasons.
 
 ### LICENSE
 
