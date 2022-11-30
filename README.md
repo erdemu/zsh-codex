@@ -1,6 +1,7 @@
 # zsh-codex
 
 TODO: write docs
+TODO: Update the gif with "# " prompt
 
 ![](images/simple.gif)
 
