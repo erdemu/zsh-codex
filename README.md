@@ -11,7 +11,7 @@ Simple usage
 - set root folder of where you put these files to ZSH_CODEX_HOME
 - source zsh_codex.zsh
 
-Your prompt will look and behave the same, until you press enter. Each new line is interecepted by the tool, if the new line starts with "codex>", it is then being used for generating a new completion using openai api. If you want to accept the new suggestion, just click enter, if you want to cancel, press Ctrl+C.
+Your prompt will look and behave the same, until you press enter. Each new line is intercepted by the tool, if the new line starts with "codex>", it is then being used for generating a new completion using openai api. If you want to accept the new suggestion, just click enter, if you want to cancel, press Ctrl+C.
 
 Feel free to improve (such as adding copy to clip board key combo, color hacks)
 
