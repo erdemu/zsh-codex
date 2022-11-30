@@ -1,6 +1,8 @@
 import openai
 import keyring
 import sys
+import os
+
 
 def get_api_key():
     # check api key exists in keyring
@@ -26,9 +28,15 @@ def main():
     # get the api key
     openai.api_key = get_api_key() 
 
+    # Try to get env variable for engine selection
+    engine = os.getenv('ZSH_CODEX_OPENAI_ENGINE')
+
+    if engine is None:
+        engine = "code-davinci-002"
+
     # call the openai api
     response = openai.Completion.create(
-        engine="code-davinci-002",
+        engine=engine,
         prompt=phrase,
         temperature=0.0,
         max_tokens=150,
@@ -41,7 +49,7 @@ def main():
     # remove leading + if it exists
     text = text.strip()
     text = text.lstrip('+')
-    print(f"{org_phrase}::\n\n{text}\n")
+    print(f"{text}")
 
 if __name__ == "__main__":
     main()

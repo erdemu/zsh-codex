@@ -32,34 +32,30 @@ function codex-accept-line () {
     # Get the current buffer
     local buffer=$BUFFER
     # if the buffer does not start with "codex>", then accept the line
-    if [[ $buffer != "codex>"* ]]; then
+    if [[ $buffer != "# "* ]]; then
         zle accept-line
     fi
 
     # Check if the buffer starts with "codex>" and does not contain ::
-    if [[ $buffer == "codex>"* && $buffer != *"::"* ]]; then
+    if [[ $buffer == "# "* ]]; then
+        # Record it to the buffer
+        print -S $buffer
+
+        # if it does remove the "# " from the buffer
+        buffer=${buffer:2}
+        
+        # Display searching message
+        echo "\nFetching Codex suggestion..."
+        
         # if it does, then send the buffer to codex.py
         # and set the buffer to the output of codex.py
-        BUFFER=$(python3 "$ZSH_CODEX_HOME/codex.py" "$buffer")
+        BUFFER=$(python3 "$ZSH_CODEX_HOME/codex.py" "#$buffer")
         # highlight the buffer after new line
-        zle highlight "$ZSH_CODEX_HIGHLIGHT_COLOR" "$BUFFER"
+        # zle highlight "$ZSH_CODEX_HIGHLIGHT_COLOR" "$BUFFER"
         # redraw the buffer
         zle redisplay
         # set the cursor to the end of the buffer
         zle end-of-line
-    fi
-    # if the buffer starts with "codex>" and contains ::, 
-    if [[ $buffer == "codex>"* && $buffer == *"::"* ]]; then
-        # remove everything before and including "::"
-        BUFFER=${buffer#*::}
-        # trim if it contains new line at the beginning
-        BUFFER=${BUFFER#\\n}
-
-        # redraw the buffer
-        zle redisplay
-        # set the cursor to the end of the buffer
-        zle end-of-line
-        zle accept-line
     fi
 } 
 
